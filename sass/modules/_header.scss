@@ -1,0 +1,21 @@
+.header {
+    height: 90px;
+    @include flex(flex-end, center);
+
+    .nav {
+        width: 20%;
+        @include flex(space-around);
+        @include flex-wrap(wrap);
+
+        .nav-items a{
+            color: $lgrey;
+            text-decoration: none;
+            display: block;
+        }
+    }
+}
+
+.main-caption {
+    width: 70%;
+    margin: 0 auto;
+}

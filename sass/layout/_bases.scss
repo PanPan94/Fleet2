@@ -1,0 +1,109 @@
+$searchBorder: #d5d5d5;
+
+.global {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    @include clearfix;
+}
+
+.menu-toggler {
+    position: fixed;
+    z-index: 9;
+    width: 10px;
+    height: 150px;
+    cursor: pointer;
+    top: calc(50% - 75px);
+    left: 30px;
+    border-radius: 10px;
+    background-color: lighten($lgrey,15);
+    transition: all 0.2s ease;
+
+    &:hover {
+        background-color: $dgrey;
+    }
+    
+}
+//INPUT
+.form-field {
+    width: 100%;
+    margin: 50px auto;
+}
+.field {
+    position: relative;
+    .field-search {
+        position: absolute;
+        top: 17%;
+        right: 30px;
+        padding: 20px;
+
+        background: $red;
+        color: #fff;
+        text-transform: uppercase;
+        font-family: Montserrat;
+        font-size: 25px;
+        font-weight: 600;
+
+        border-radius: 60px;
+        border: solid 1px $searchBorder;
+        cursor:pointer;
+        @include box-shadow(0 0 0 $white);
+    }
+}
+.field-input {
+    position: relative;
+    width: 100%;
+    padding: 8px 230px 8px 25px;
+    line-height: 16px;
+    height: 32px;
+
+    font-family: Montserrat, sans-serif;
+    font-size: 46px;
+    font-weight: 400;
+    color: $black;
+    
+    border: none;
+    -webkit-appearance: none;
+    @include box-shadow(0 1px 15px lighten($dgrey, 55));
+
+    background: $white;
+    border: solid 1px $lgrey;
+    border-radius: 30px;
+    height: 110px;
+
+    outline: none;
+
+    transition: box-shadow 0.3s ease-in;
+    &:focus {
+        @include box-shadow(0 1px 15px lighten($dgrey, 50));
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    .global {
+        width: 100%;
+    }
+
+    .menu-toggler {
+        top: 20px;
+        left: 15px;
+        width: 10px;
+        height: 60px;
+        border-radius: 10px;
+    }
+    .field-input {
+        height: 80px;
+        padding: 8px 120px 8px 25px;
+        font-size: 12px;
+    }
+    .field-search {
+        width: 100px;
+        height: 70px;
+        font-size: 15px!important;
+        padding: 0!important;
+        top: 5px!important;
+        right: 4px!important;
+
+    }
+}
