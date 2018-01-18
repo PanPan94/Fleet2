@@ -53,7 +53,7 @@ module.exports = grunt => {
                     ]
                 },
                 options: {
-                    proxy: '127.0.0.1/~panpan/mmi/fleet',
+                    proxy: '127.0.0.1/Fleet2',
                     port: 8080,
                     watchTask: true,
                     notify: false
@@ -67,7 +67,7 @@ module.exports = grunt => {
             dev: {
                 options: {
                     port: 80,
-                    base: '127.0.0.1/~panpan/mmi/fleet'
+                    base: '127.0.0.1/Fleet2'
                 }
             }
         }
