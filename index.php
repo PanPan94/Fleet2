@@ -62,7 +62,7 @@
             </div>
             <div class="h--post-desc">
                 <h2 class="titre">Bhind</h2>
-                <p>Site pour visiter les banlieus</p>
+                <p>Site pour visiter les banlieues</p>
             </div>
         </div>
 

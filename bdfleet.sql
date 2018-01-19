@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 18 jan. 2018 à 15:11
+-- Généré le :  ven. 19 jan. 2018 à 01:46
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -36,14 +36,21 @@ CREATE TABLE IF NOT EXISTS `articles` (
   `contenu` text NOT NULL,
   `date_time_publication` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
 
 --
--- Déchargement des données de la table `articles`
+-- Structure de la table `commentaires`
 --
 
-INSERT INTO `articles` (`id`, `titre`, `categorie`, `contenu`, `date_time_publication`) VALUES
-(1, 'Fictio', 'web', 'Application', '2018-01-18 15:40:01');
+DROP TABLE IF EXISTS `commentaires`;
+CREATE TABLE IF NOT EXISTS `commentaires` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `commentaire` text NOT NULL,
+  `id_article` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -60,14 +67,15 @@ CREATE TABLE IF NOT EXISTS `membres` (
   `motdepasse` text NOT NULL,
   `avatar` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `membres`
 --
 
 INSERT INTO `membres` (`id`, `prenom`, `nom`, `mail`, `motdepasse`, `avatar`) VALUES
-(3, 'angelique', 'souvant', 'angelique.souvant@gmail.com', 'dc76e9f0c0006e8f919e0c515c66dbba3982f785', '3.png');
+(3, 'angelique', 'souvant', 'angelique.souvant@gmail.com', 'dc76e9f0c0006e8f919e0c515c66dbba3982f785', '3.png'),
+(4, 'san', 'raveenthiran', 'san.rav@gmail.com', 'dc76e9f0c0006e8f919e0c515c66dbba3982f785', '4.jpg');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

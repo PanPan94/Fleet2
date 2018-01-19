@@ -103,7 +103,7 @@ include_once("php/userinfo.php");
                 </div>
                 <div class="h--post-desc">
                     <h2 class="titre">Fleet</h2>
-                    <p>Site d'entraire et de développement de projet</p>
+                    <p>Site d'entraide et de développement de projets</p>
                     <span class="h--post-subdesc">
                        Besoin de conseils pour notre site.
                     </span>
@@ -117,7 +117,7 @@ include_once("php/userinfo.php");
                 </div>
                 <div class="h--post-desc">
                     <h2 class="titre">Fictio</h2>
-                    <p>Jeu sur mobile</p>
+                    <p>Application mobile</p>
                 </div>
             </div>
         </div>
@@ -129,7 +129,7 @@ include_once("php/userinfo.php");
               </div>
               <div class="h--post-desc">
                   <h2 class="titre">Bhind</h2>
-                  <p>Site pour visiter les banlieus</p>
+                  <p>Site pour visiter les banlieues</p>
               </div>
           </div>
 
@@ -139,7 +139,7 @@ include_once("php/userinfo.php");
                   <img src="img/projets/investigames.jpg" alt="project_image">
                 </div>
                 <div class="h--post-desc">
-                    <h2 class="titre">investigames</h2>
+                    <h2 class="titre">Investigames</h2>
                     <p>Jeu d'enquête</p>
                     <span class="h--post-subdesc">
                       Cherche des idées d'enquetes.
