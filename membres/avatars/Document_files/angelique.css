@@ -1,0 +1,23 @@
+/* STYLE FORMULAIRE INSCRITON CONNEXION INDEX */
+
+.btn-connexion{
+	padding: 14px;
+    background: #ff5260;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: Montserrat;
+    border-radius: 60px;
+    border: solid 1px #d5d5d5;
+    cursor: pointer;
+    -moz-box-shadow: 0 0 0 #fcfcfc;
+    -webkit-box-shadow: 0 0 0 #fcfcfc;
+    box-shadow: 0 0 0 #fcfcfc;
+    float: right;
+    margin: 10px 0px;
+}
+.label{
+	text-align: right;
+}
+.profile-name .fname {
+    color: #ff5260;
+}

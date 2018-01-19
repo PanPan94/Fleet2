@@ -44,18 +44,16 @@ include_once("php/userinfo.php");
                     <i class="menu-item-logo-profile"></i> <a href="profil.php?id=<?php echo $_SESSION['id']; ?>">Voir mon profil</a>
                 </div>
                 <!-- <div class="menu-item">
-                    <i class="menu-item-logo-fav"></i> <a href="#">Voir mon profil</a>
-                </div>
-                <div class="menu-item">
                     <i class="menu-item-logo-help"></i> <a href="#">Voir mon profil</a>
                 </div> -->
             </div>
 
             <div class="menu-btns">
-                <div class="menu-btn"><a href="#">Web</a></div>
-                <div class="menu-btn"><a href="#">Opinions</a></div>
-                <div class="menu-btn"><a href="#">Start-ups</a></div>
-                <div class="menu-btn"><a href="#">LifeStyle</a></div>
+                <div id="web" class="menu-btn"><a  href="#">Web</a></div>
+                <div id="opinion" class="menu-btn"><a href="#">Opinions</a></div>
+                <div id="startup" class="menu-btn"><a href="#">Start-ups</a></div>
+                <div id="lifestyle" class="menu-btn"><a href="#">LifeStyle</a></div>
+                <div id="all" class="menu-btn"><a href="#">All</a></div>
             </div>
         </div>
     <!-- NAVBAR -->
@@ -73,55 +71,140 @@ include_once("php/userinfo.php");
                     <h2>Vos idées aux yeux du monde entier.</h2>
                 </div>
                 <div class="field">
-                	<form >
-                    <input type="text" class="field-input" placeholder="Explorer les projets" name="input">
-                    <input type="submit" value="Chercher" class="field-search">
+                	<form>
+                    <input id="search" type="text" class="field-input" placeholder="Rechercher un projet" name="input">
+                    <input type="hidden" value="Chercher" class="field-search">
                 </div>
               </form>
             </div>
         </div>
+        <div class="menu-btns">
+            <div class="proposition"><a href="redaction.php?id=<?php echo $_SESSION['id']; ?>">Poster mon projet</a></div>
+        </div>
     <!-- LATEST POSTS -->
-        <div class="h--posts">
-            <div class="h--posts-item">
-                <a class="h--post-link" href="#"></a>
+        <div class="h--posts" >
+            <div class="h--posts-item projet_lifestyle projet">
+                <a class="h--post-link" href="projets/projetdemo.php?id=<?php echo $_SESSION['id']; ?>"></a>
                 <div class="h--post-item-img">
-                    <img src="https://images.unsplash.com/photo-1502673530728-f79b4cab31b1?dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb" alt="project_image">
+                    <img src="img/projets/wylido.jpg" alt="project_image">
                 </div>
                 <div class="h--post-desc">
-                    <h2>Wylido</h2>
+                    <h2 class="titre">Wylido</h2>
                     <p>Site de rencontre pour chiens</p>
                     <span class="h--post-subdesc">
-                        Cherche un chien.
+                         Decouvrez et apportez vos idées.
+                    </span>
+                </div>
+            </div>
+            <div class="h--posts-item projet_opinion projet">
+                <a class="h--post-link" href="projets/projet.php?id=<?php echo $_SESSION['id']; ?>"></a>
+                <div class="h--post-item-img">
+                  <img src="img/projets/fleet.jpg" alt="project_image">
+                </div>
+                <div class="h--post-desc">
+                    <h2 class="titre">Fleet</h2>
+                    <p>Site d'entraire et de développement de projet</p>
+                    <span class="h--post-subdesc">
+                       Besoin de conseils pour notre site.
                     </span>
                 </div>
             </div>
 
-            <div class="h--posts-item">
-                <a class="h--post-link" href="#"></a>
+            <div class="h--posts-item projet">
+                            <a class="h--post-link" href="projets/projetdemo.php?id=<?php echo $_SESSION['id']; ?>"></a>
                 <div class="h--post-item-img">
-                    <img src="https://images.unsplash.com/photo-1502673530728-f79b4cab31b1?dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb" alt="project_image">
+                  <img src="img/projets/fictio.jpg" alt="project_image">
                 </div>
                 <div class="h--post-desc">
-                    <h2>Wylido</h2>
-                    <p>Site de rencontre pour chiens</p>
-                </div>
-            </div>
-
-            <div class="h--posts-item">
-                <div class="h--post-item-img">
-                    <img src="https://images.unsplash.com/photo-1502673530728-f79b4cab31b1?dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb" alt="project_image">
-                </div>
-                <div class="h--post-desc">
-                    <h2>Wylido</h2>
-                    <p>Site de rencontre pour chiens</p>
+                    <h2 class="titre">Fictio</h2>
+                    <p>Jeu sur mobile</p>
                 </div>
             </div>
         </div>
-    </div>
+        <div class="h--posts">
+          <div class="h--posts-item projet_web projet">
+              <a class="h--post-link" href="projets/projetdemo.php?id=<?php echo $_SESSION['id']; ?>"></a>
+              <div class="h--post-item-img">
+                <img src="img/projets/bhind.jpg" alt="project_image">
+              </div>
+              <div class="h--post-desc">
+                  <h2 class="titre">Bhind</h2>
+                  <p>Site pour visiter les banlieus</p>
+              </div>
+          </div>
+
+            <div class="h--posts-item projet_opinion projet">
+                <a class="h--post-link" href="projets/projetdemo.php?id=<?php echo $_SESSION['id']; ?>"></a>
+                <div class="h--post-item-img">
+                  <img src="img/projets/investigames.jpg" alt="project_image">
+                </div>
+                <div class="h--post-desc">
+                    <h2 class="titre">investigames</h2>
+                    <p>Jeu d'enquête</p>
+                    <span class="h--post-subdesc">
+                      Cherche des idées d'enquetes.
+                    </span>
+                </div>
+            </div>
+
+            <div class="h--posts-item projet_startup projet">
+                            <a class="h--post-link" href="projets/projetdemo.php?id=<?php echo $_SESSION['id']; ?>"></a>
+                <div class="h--post-item-img">
+                  <img src="img/projets/7art.jpg" alt="project_image">
+                </div>
+                <div class="h--post-desc">
+                    <h2 class="titre">7art</h2>
+                    <p>Les secrets du cinéma</p>
+                    <span class="h--post-subdesc">
+                        Besoin de professionnels du cinéma.
+                    </span>
+                </div>
+            </div>
+        </div>
     <!-- SCRIPTS -->
     <script src="js/app.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <script>
+        var list = new Array();
+
+        $("#search").on("keyup", function (e) {
+            var letter = ($(this).val().toLowerCase());
+
+            $('.projet').each(function () {
+                var projet = $(this).find(".titre").text().replace(/ /g, '').replace(/\n/g, '').toLowerCase();
+            console.log(projet);
+                if (projet.indexOf(letter) != -1) {
+                  $(this).show();
+                } else {
+                    //hide
+                    var select=$(this);
+                    select.fadeOut("slow", "swing");
+                }
+            })
+        });
+    </script>
+    <script>
+              $("#web").on("click", function (e){
+                $(".h--posts-item").hide();
+                $(".projet_web").show();
+              })
+              $("#all").on("click", function (e){
+                $(".h--posts-item").show();
+              })
+              $("#opinion").on("click", function (e){
+                $(".h--posts-item").hide();
+                $(".projet_opinion").show();
+              })
+              $("#startup").on("click", function (e){
+                $(".h--posts-item").hide();
+                $(".projet_startup").show();
+              })
+              $("#lifestyle").on("click", function (e){
+                $(".h--posts-item").hide();
+                $(".projet_lifestyle").show();
+              })
+    </script>
 </body>
 </html>

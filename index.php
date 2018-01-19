@@ -33,47 +33,46 @@
                 </div>
                 <div class="field">
                 	<form >
-                    <input type="text" class="field-input" placeholder="Explorer les projets" name="input">
-                    <input type="submit" value="Chercher" class="field-search">
+                    <input  id="search" type="text" class="field-input" placeholder="Rechercher un projet" name="input">
+                    <input type="hidden" value="Chercher" class="field-search">
                 </div>
               </form>
             </div>
         </div>
     <!-- LATEST POSTS -->
-        <div class="h--posts">
-            <div class="h--posts-item">
-                <a class="h--post-link" href="#"></a>
-                <div class="h--post-item-img">
-                    <img src="https://images.unsplash.com/photo-1502673530728-f79b4cab31b1?dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb" alt="project_image">
-                </div>
-                <div class="h--post-desc">
-                    <h2>Wylido</h2>
-                    <p>Site de rencontre pour chiens</p>
-                    <span class="h--post-subdesc">
-                        Cherche un chien.
-                    </span>
-                </div>
+    <div class="h--posts" >
+        <div class="h--posts-item projet">
+            <a class="h--post-link" href="#"></a>
+            <div class="h--post-item-img">
+                <img src="img/projets/wylido.jpg" alt="project_image">
             </div>
-
-            <div class="h--posts-item">
-                <a class="h--post-link" href="#"></a>
-                <div class="h--post-item-img">
-                    <img src="https://images.unsplash.com/photo-1502673530728-f79b4cab31b1?dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb" alt="project_image">
-                </div>
-                <div class="h--post-desc">
-                    <h2>Wylido</h2>
-                    <p>Site de rencontre pour chiens</p>
-                </div>
+            <div class="h--post-desc">
+                <h2 class="titre">Wylido</h2>
+                <p>Site de rencontre pour chiens</p>
+                <span class="h--post-subdesc">
+                     Besoin d'un développeur d'application.
+                </span>
             </div>
+        </div>
 
-            <div class="h--posts-item">
-                <div class="h--post-item-img">
-                    <img src="https://images.unsplash.com/photo-1502673530728-f79b4cab31b1?dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb" alt="project_image">
-                </div>
-                <div class="h--post-desc">
-                    <h2>Wylido</h2>
-                    <p>Site de rencontre pour chiens</p>
-                </div>
+        <div class="h--posts-item projet" id="projet-2">
+            <a class="h--post-link" href="#"></a>
+            <div class="h--post-item-img">
+              <img src="img/projets/bhind.jpg" alt="project_image">
+            </div>
+            <div class="h--post-desc">
+                <h2 class="titre">Bhind</h2>
+                <p>Site pour visiter les banlieus</p>
+            </div>
+        </div>
+
+        <div class="h--posts-item projet" id"projet-3">
+            <div class="h--post-item-img">
+              <img src="img/projets/fictio.jpg" alt="project_image">
+            </div>
+            <div class="h--post-desc">
+                <h2 class="titre">Fictio</h2>
+                <p>Jeu sur mobile</p>
             </div>
         </div>
     </div>
@@ -181,9 +180,30 @@
         </div>
     </div>
     <!-- SCRIPTS -->
+
     <script src="js/app.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"  crossorigin="anonymous"></script>
+    <script>
+        var list = new Array();
+
+        $("#search").on("keyup", function (e) {
+            var letter = ($(this).val().toLowerCase());
+
+            $('.projet').each(function () {
+                var projet = $(this).find(".titre").text().replace(/ /g, '').replace(/\n/g, '').toLowerCase();
+            console.log(projet);
+                if (projet.indexOf(letter) != -1) {
+                  $(this).show();
+                } else {
+                    //hide
+                    var select=$(this);
+                    select.fadeOut("slow", "swing");
+                }
+            })
+        });
+    </script>
+
 </body>
 </html>

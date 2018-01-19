@@ -21,3 +21,61 @@
 .profile-name .fname {
     color: #ff5260;
 }
+.menu .menu-header .profile-pic img{
+	border-radius: 50%;
+}
+.profile-pic{
+ border-radius: 50%;
+}
+.proposition{
+	text-align: center;
+	width: 300px;
+	height: 70px;
+	margin: 15px auto;
+	background-image: url("../img/prop.jpg");
+	border-radius: 20px;
+	background-repeat: : no-repeat;
+	background-size: cover;
+	background-position:0px -50px;
+}
+.proposition a{
+	padding-top: 25px;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	align-items: center;
+	display: block;
+	width: 100%;
+	height: 100%;
+	font-weight: bold;
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+.form-projet{
+	width: 100%;
+	height:800px;
+	margin-left:300px;
+}
+.proj-f {
+	padding: 8px 23px 8px 25px;
+	line-height: 16px;
+	font-family: Montserrat,  sans-serif;
+	color: #414141;
+	border: none;
+	-webkit-appearance: none;
+	-moz-box-shadow: 0 1px 15px #ebebeb;
+	-webkit-box-shadow: 0 1px 15px #ebebeb;
+	box-shadow: 0 1px 15px #ebebeb;
+	background: #fcfcfc;
+	border: solid 1px #95989a;
+	border-radius: 30px;
+	outline: none;
+	transition: box-shadow 0.3s ease-in;
+	-moz-box-shadow: 0 1px 15px #dfdfdf;
+	-webkit-box-shadow: 0 1px 15px #dfdfdf;
+	box-shadow: 0 1px 15px #dfdfdf;
+}

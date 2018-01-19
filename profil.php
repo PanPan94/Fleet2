@@ -39,7 +39,7 @@ include_once("php/userinfo.php");
     </div>
     <div class="avatar-container">
       <?php if(!empty($userinfo['avatar'])){ ?>
-        <img class="avatar-image" src="membres/avatars/<?php echo $userinfo['avatar']; ?>" width="150px" />
+        <img class="avatar-image" src="membres/avatars/<?php echo $userinfo['avatar']; ?>" width="200px" />
       <?php
         }
       ?>
@@ -61,39 +61,55 @@ include_once("php/userinfo.php");
       <div class="projet-container">
           <div><h5>Projets proposés</h5></div>
           <div>
-            <div class="projet">
+            <div class="projet p1">
+              <p>bigny</p>
             </div>
-            <div class="projet">
+            <div class="projet p2">
+              <p>fleet</p>
             </div>
-            <div class="projet">
+            <div class="projet p3">
+              <p>core</p>
+            </div>
+            <div class="projet p4">
+              <p>core</p>
             </div>
           </div>
       </div>
-      <div class="projet-container">
+      <div class="interet-container">
           <h5>Interêts</h5>
-          <div class="interets">
+          <div class="interets i1">
+            <p>danse</p>
           </div>
-          <div class="interets">
+          <div class="interets i2">
+            <p>programmation</p>
           </div>
-          <div class="interets">
+          <div class="interets i3">
+            <p>photographie</p>
           </div>
       </div>
       <div class="projet-container">
-          <div><h5>Intervenu sur le projet</h5></div>
+          <div><h5>Projets proposés</h5></div>
           <div>
-            <div class="projet">
+            <div class="projet p5">
+              <p>bigny</p>
             </div>
-            <div class="projet">
+            <div class="projet p6">
+              <p>fleet</p>
             </div>
-            <div class="projet">
+            <div class="projet p7">
+              <p>core</p>
             </div>
           </div>
       </div>
     </div>
+      <footer class="profil-foot">
+        <p>Copyright (c) 2017 Copyright Holder All Rights Reserved.</p>
+      </footer>
     <!-- SCRIPTS -->
     <script src="js/app.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+
 </body>
 </html>

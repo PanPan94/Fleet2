@@ -1,12 +1,15 @@
 <?php
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
   include_once("php/bd.php");
-var_dump($_POST);
+  include_once("php/authorise.php");
+  include_once("php/userinfo.php");
    if(isset($_POST['article_titre'], $_POST['article_categorie'], $_POST['article_contenu']) ){
      if(!empty($_POST['article_titre']) AND !empty($_POST['article_categorie']) AND !empty($_POST['article_contenu'])){
        $article_titre= htmlspecialchars($_POST['article_titre']);
        $article_categorie= htmlspecialchars($_POST['article_categorie']);
        $article_contenu= htmlspecialchars($_POST['article_contenu']);
-       var_dump($article_titre);
        $ins = $bdd->prepare('INSERT INTO articles (titre, categorie, contenu, date_time_publication) VALUES (?, ?,?, NOW())');
        $ins->execute(array($article_titre, $article_categorie, $article_contenu));
       $message="Votre article à bien été poster";
@@ -28,35 +31,44 @@ var_dump($_POST);
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/angelique.css">
+    <link rel="stylesheet" href="css/projet.css">
+
 </head>
 <body>
-
-  <form method="post" action="" id="article">
-    <table>
-      <tr>
-        <td><label>Titre</label>
-        <td><input type="text" name="article_titre"/></td>
-      </tr>
-      <tr><td><label>Catégorie</label></td>
-        <td>
-          <select  form="article"  name="article_categorie">
-              <option value="web">web</option>
-              <option value="opinion">opinion</option>
-              <option value="startup">startup</option>
-              <option value="lifestyle">lifestyle</option>
-          </select></td>
-      </tr>
-    </table>
-    <textarea name="article_contenu"></textarea><br/>
-    <input type="submit" value="Poster un projet"/>
-  </form>
-  <br/>
-  <?php if(isset($message)){
-    echo $message;
-  }
-  ?>
-
-
+  <!-- NAVBAR -->
+  <header class="header">
+    <div class="nav">
+      <div class="nav-items"><a href="main.php?id=<?php echo $_SESSION['id']; ?>">Accueil</a></div>
+      <div class="nav-items"><a href="profil.php?id=<?php echo $_SESSION['id']; ?>">Profil</a></div>
+      <div class="nav-items"><a href="php/deconnexion.php">Déconnexion</a></div>
+    </div>
+  </header>
+  <div class="form-projet">
+    <form method="post" action="" id="article">
+        <label><b>Titre</b></label>
+            <input class="proj-f" type="text" name="article_titre"/><br/>
+            <label><b>Catégorie</b></label>
+            <select class="proj-f"  form="article"  name="article_categorie">
+                <option value="web">web</option>
+                <option value="opinion">opinion</option>
+                <option value="startup">startup</option>
+                <option value="lifestyle">lifestyle</option>
+            </select>
+            <br/>
+            <label><b>Cibles</b></label>
+            <input class="proj-f"  type="text"/>
+            <label><b>Support</b></label>
+            <input class="proj-f"  type="text"/>
+            <label><b>Objectifs</b></label>
+            <input class="proj-f" type="text"/>
+      <textarea class="comments" name="article_contenu"></textarea><br/>
+      <input placeholder="Expliquez votre idée et ce dont vous avez besoin" class="comments-btn" type="submit" value="Poster un projet"/>
+    </form>
+    <?php if(isset($message)){
+      echo $message;
+    }
+    ?>
+    </div>
 
     <!-- SCRIPTS -->
     <script src="js/app.js"></script>
